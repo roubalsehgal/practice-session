@@ -14,6 +14,10 @@ class Second_Largest{
 		sc.close();
 	}
 	public static void findSecondL(int arr[], int n){
+		if(n<2){
+			System.out.println("No Second Largest Element Present.");
+			return;
+		}
 		//Largest
 		int max1=Integer.MIN_VALUE;
 		for(int i=0;i<n;i++){
