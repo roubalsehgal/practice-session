@@ -1,13 +1,25 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Collections;
 
 public class String_Permutations {
 
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
-		System.out.println("Enter the string:- ");
-		String str=sc.next();
-		System.out.print(getPermutations(str));
+		System.out.println("Enter the no. of testcases:- ");
+		int t=sc.nextInt();
+		for(int i=0;i<t;i++)
+		{
+			System.out.println("\nEnter the string:- ");
+			String str=sc.next();
+			if(str.length()<=0 || str.length()>5){
+				System.out.print("INVALID STRING!!!");
+			}else{
+				ArrayList<String> res=getPermutations(str);
+				Collections.sort(res);
+				display(res);
+			}
+		}
 		sc.close();
 	}
 	public static ArrayList<String> getPermutations(String str){
@@ -27,5 +39,10 @@ public class String_Permutations {
 			}
 		}
 		return mr;
+	}
+	public static void display(ArrayList<String> res){
+		for(int j=0;j<res.size();j++){
+			System.out.print(res.get(j)+" ");
+		}
 	}
 }
